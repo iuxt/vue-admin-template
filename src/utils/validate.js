@@ -14,7 +14,9 @@ export function isExternal(path) {
  * @param {string} str
  * @returns {Boolean}
  */
+
+// 去掉原先的用户名验证，原来只能是 admin 和 editor，现在改成了小写字母
 export function validUsername(str) {
-  const valid_map = ['admin', 'editor']
-  return valid_map.indexOf(str.trim()) >= 0
+  const reg = /^[a-z]+$/
+  return reg.test(str)
 }
